@@ -1,0 +1,25 @@
+# Nmap 7.95 scan initiated Mon Jun 23 19:02:51 2025 as: /usr/lib/nmap/nmap --privileged -sS -o nmap.txt 192.168.1.0/24
+Nmap scan report for dsldevice.lan (192.168.1.1)
+Host is up (0.010s latency).
+Not shown: 994 filtered tcp ports (no-response)
+PORT      STATE  SERVICE
+80/tcp    open   http
+443/tcp   open   https
+445/tcp   closed microsoft-ds
+49152/tcp closed unknown
+49157/tcp closed unknown
+49161/tcp closed unknown
+MAC Address: 54:37:BB:36:88:C0 (Taicang T&W Electronics)
+
+Nmap scan report for 192.168.1.5
+Host is up (0.013s latency).
+All 1000 scanned ports on 192.168.1.5 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+MAC Address: 22:69:58:82:F2:45 (Unknown)
+
+Nmap scan report for 192.168.1.8
+Host is up (0.0000050s latency).
+All 1000 scanned ports on 192.168.1.8 are in ignored states.
+Not shown: 1000 closed tcp ports (reset)
+
+# Nmap done at Mon Jun 23 19:03:09 2025 -- 256 IP addresses (3 hosts up) scanned in 17.27 seconds
