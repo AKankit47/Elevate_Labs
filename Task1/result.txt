@@ -1,0 +1,84 @@
+Cybersecurity Internship - Nmap & Wireshark Result
+==================================================
+
+🔹 Host: 192.168.1.1 (dxxxxx.xx)
+- Status: Host is responsive.
+- MAC Address: 54:XX:XX:XX:XX:XX (Txxxx xx xxxxx) – likely a router.
+- Open Ports:
+  - 80/tcp (HTTP): Router admin panel — **unencrypted**, can be vulnerable to MITM.
+  - 443/tcp (HTTPS): Secure admin interface — ensure certificate validity.
+- Closed Ports (445, 631, 49152–49163): Responded with RST.
+  - 445 (SMB): Common target in Windows networks.
+  - 631 (IPP): Internet printing — safe if unused.
+  - 49152+ (dynamic): Common for RPC, UPnP — should be monitored.
+
+🔹 Host: 192.168.1.5
+- Status: Responsive.
+- MAC Address: 22:XX:XX:XX:XX:XX (Unknown vendor).
+- All 1000 TCP ports are **closed**.
+- Could be a **laptop, phone, or IoT device** with host-based firewall.
+
+🔹 Host: 192.168.1.8
+- Status: Responsive with extremely low latency (likely my own machine).
+- All ports are **closed** — no visible services.
+
+-----------------------------------------
+🛡️ Security Insights
+-----------------------------------------
+
+| Host IP      | Open Port | Service | Risk Description                                |
+|--------------|-----------|---------|--------------------------------------------------|
+| 192.168.1.1  | 80/tcp    | HTTP    | Unencrypted login access — susceptible to sniffing. |
+| 192.168.1.1  | 443/tcp   | HTTPS   | Secure if certificate is valid. |
+| 192.168.1.1  | 445–49163 | Closed  | Good security posture — no external access. |
+| 192.168.1.5  | None      | -       | Secure — all ports closed. |
+| 192.168.1.8  | None      | -       | Secure — all ports closed. |
+
+-----------------------------------------
+📡 Wireshark Analysis
+-----------------------------------------
+
+During the Nmap scan, Wireshark captured various types of traffic, including:
+
+🔸 **ICMPv6 Neighbor Advertisement Packet**
+Example:
+
+Neighbor Advertisement
+Target Address: 2401:xxxx:xxxxx:xxxx:xxxx:xx
+Destination: 2401:xxxx:xxxx:xxxx:x
+Flags: Solicited, Override
+
+
+- This is part of the **Neighbor Discovery Protocol (NDP)** in IPv6 (like ARP in IPv4).
+- The device at `2401:xxxx:xxxx:xxxx:xxxx:xxxx` is advertising its availability to `2401:xxxx:xxxx:xxxx:x`.
+- This usually happens during:
+  - System startup
+  - Address resolution
+  - Network scans (triggered by Nmap)
+- No suspicious behavior found; this is **expected IPv6 activity** during scans.
+
+🔸 **TCP SYN Packets**
+- Sent from the scanning host to 1000 common ports on each device.
+- If port is open → a SYN-ACK is received.
+- If closed → a RST (reset) is received.
+- If filtered (firewall) → no response.
+
+No unusual packets, dropped connections, or suspicious payloads were observed.
+
+-----------------------------------------
+✅ Conclusion
+-----------------------------------------
+
+- Nmap successfully identified 3 active devices on the local network.
+- Only the router (192.168.1.1) has open ports, as expected.
+- Devices 192.168.1.5 and 192.168.1.8 are well-secured with all ports closed.
+- Wireshark confirmed healthy network behavior and protocol use.
+
+🟢 Final Thoughts:
+- Keep router updated and use strong admin passwords.
+- Prefer HTTPS over HTTP.
+- Disable unused services like UPnP or remote admin.
+- Monitor devices that don’t identify a known vendor.
+
+All activity was conducted on my personal network for learning purposes under proper authorization.
+
