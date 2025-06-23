@@ -9,13 +9,13 @@ PORT      STATE  SERVICE
 49152/tcp closed unknown
 49157/tcp closed unknown
 49161/tcp closed unknown
-MAC Address: 54:37:BB:36:88:C0 (Taicang T&W Electronics)
+MAC Address: 54:XX:XX:XX:XX:XX (Taicang T&W Electronics)
 
 Nmap scan report for 192.168.1.5
 Host is up (0.013s latency).
 All 1000 scanned ports on 192.168.1.5 are in ignored states.
 Not shown: 1000 closed tcp ports (reset)
-MAC Address: 22:69:58:82:F2:45 (Unknown)
+MAC Address: 22:XX:XX:XX:XX:XX (Unknown)
 
 Nmap scan report for 192.168.1.8
 Host is up (0.0000050s latency).
