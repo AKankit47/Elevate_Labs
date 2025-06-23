@@ -1,0 +1,58 @@
+Cybersecurity Internship
+========================
+File: precautions.txt
+Topic: Ethical and Safe Practices for Sharing Scan Results
+
+--------------------------------------------------
+⚠️ Precautions While Sharing Scan Results Publicly
+--------------------------------------------------
+
+1. 🚫 Do NOT Share MAC Addresses
+   - MAC addresses are unique to devices and can be used to identify vendors or infer device types.
+   - Always redact or anonymize MAC addresses before publishing scan outputs.
+
+2. 🔒 Mask or Obfuscate Private IP Addresses
+   - IPs like `192.168.x.x`, `10.x.x.x`, or `172.16.x.x` are private, but they can still reveal your network structure.
+   - Replace with placeholders like `xxx.xxx.xxx.xxx` or `[REDACTED]`.
+
+3. 🤐 Avoid Revealing Device Hostnames
+   - Hostnames may reveal router models or vendor-specific names.
+   - These can aid attackers in fingerprinting your network.
+
+4. 📡 Don't Share Raw Packet Captures Unfiltered
+   - PCAP or PCAPNG files (from Wireshark) may contain:
+     - Login sessions
+     - Device fingerprints
+     - Sensitive internal traffic
+   - Always review and **sanitize** before sharing.
+
+5. 🕵️‍♂️ Perform Scans Only On Authorized Networks
+   - Scanning networks without permission is **illegal and unethical**.
+   - Only scan:
+     - Your personal home network
+     - Networks where you have **explicit permission** (lab, testbed, internship task)
+
+6. 📜 Follow Responsible Disclosure & Cyber Laws
+   - Do not post vulnerabilities or exposures unless you're following responsible disclosure.
+   - Always respect:
+     - IT Act 2000 (India)
+     - GDPR (EU), if applicable
+     - Your country’s cybercrime regulations
+
+7. 📤 Don't Share Credentials or Admin Interfaces
+   - Don’t upload screenshots or logs showing login portals, router dashboards, or device UIs.
+   - This might unintentionally expose usernames, firmware versions, or weak configurations.
+
+8. 🔐 Use a `.gitignore` or Private Repo
+   - If you're using GitHub and not ready to sanitize fully, keep the repo **private**.
+   - Use `.gitignore` to avoid uploading raw or sensitive files accidentally (e.g., `*.pcapng`, `*.xml`, `.env`).
+
+--------------------------------------------------
+✅ Best Practice
+- Always **sanitize** and **review** files before uploading.
+- Add a disclaimer in public repositories stating:
+  > "All scans were performed ethically on a private network under authorization. No real-world systems were harmed."
+
+--------------------------------------------------
+By following these precautions, you ensure responsible behavior as a cybersecurity learner or professional.
+
