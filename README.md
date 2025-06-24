@@ -22,11 +22,11 @@ Each task is organized in its own folder with appropriate documentation, scripts
 
 ```
 📦 Elevate-Labs-Cybersecurity-Internship/
- ┣ 📂 Task-01-Phishing-Email-Analysis/
+ ┣ 📂 Task1
  ┃ ┣ 📄 README.md
  ┃ ┣ 📄 result.txt
  ┃ ┣ 📄 precaution.md
- ┣ 📂 Task-02-...
+ ┣ 📂 Task2
  ┣ 📂 Projects/
  ┃ ┗ 📄 project_report.md
  ┗ 📄 README.md
@@ -36,11 +36,11 @@ Each task is organized in its own folder with appropriate documentation, scripts
 
 ## ✅ Tasks Completed
 
-| Task No. | Title                          | Status   |
-|----------|--------------------------------|----------|
-| Task 01  | Phishing Email Analysis        | ✅ Done  |
-| Task 02  | *To be updated*                | ⏳ Ongoing |
-| Task 03  | *To be updated*                | ⏳ Ongoing |
+| Task No. | Title                                    | Status   |
+|----------|------------------------------------------|----------|
+| Task 01  | Scanning Local Network using nmap        | ✅ Done  |
+| Task 02  | Phishing Email Analysis                  | ⏳ Ongoing |
+| Task 03  | *To be updated*                          | ⏳ Ongoing |
 
 ---
 
