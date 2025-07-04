@@ -39,8 +39,4 @@ VPNs are powerful tools for enhancing security and privacy, especially on unsecu
 
 ---
 
-## 📸 Screenshots
-- ✅ IP address before and after connecting
-- ✅ VPN interface while connected
-- ✅ Speed test comparison (optional)
 
